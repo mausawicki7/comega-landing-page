@@ -3,7 +3,7 @@ import AnimatedReveal from "@/components/ui/AnimatedReveal";
 
 export default function MapaUbicacion() {
   return (
-    <section className="w-full bg-comega-charcoal px-6 py-24 md:px-16 md:py-32">
+    <section id="ubicacion" className="w-full bg-comega-charcoal px-6 py-24 md:px-16 md:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading number="08" eyebrow="Cómo llegar" title="Av. Corrientes y Av. Leandro N. Alem" />
 

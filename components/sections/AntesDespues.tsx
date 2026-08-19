@@ -13,7 +13,7 @@ const ReactCompareSlider = dynamic(
 
 export default function AntesDespues() {
   return (
-    <section className="w-full bg-comega-charcoal px-6 py-24 md:px-16 md:py-32">
+    <section id="antes-despues" className="w-full bg-comega-charcoal px-6 py-24 md:px-16 md:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading number="04" eyebrow="Antes y Después" title="Casi un siglo, la misma fachada" />
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Nav from "@/components/Nav";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 import "./globals.css";
 
 // AVGARDD_2.TTF (Avant Garde BT Demi) — usado en todos los títulos del sitio.
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-comega-black text-comega-cream">
         <Nav />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

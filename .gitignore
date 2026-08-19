@@ -40,5 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Screenshots de referencia (no versionar)
-*.png
+# Screenshots de referencia sueltos en la raíz (no versionar).
+# Solo la raíz: los assets de public/ sí se versionan.
+/*.png
