@@ -1,14 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
+import puertoMaderoImg from "@/public/images/vistas/puerto-madero.webp";
+import reservaEcologicaImg from "@/public/images/vistas/reserva-ecologica.webp";
+import rioDeLaPlataImg from "@/public/images/vistas/rio-de-la-plata.webp";
+import skylinePortenoImg from "@/public/images/vistas/skyline-porteno.webp";
+import coloniaUruguayImg from "@/public/images/vistas/colonia-uruguay.webp";
 
 const vistas = [
-  { nombre: "Puerto Madero", gradiente: "from-[#1a2420] to-[#0b0b0b]" },
-  { nombre: "Reserva Ecológica", gradiente: "from-[#1c2117] to-[#0b0b0b]" },
-  { nombre: "Río de la Plata", gradiente: "from-[#151d24] to-[#0b0b0b]" },
-  { nombre: "Skyline porteño", gradiente: "from-[#211d15] to-[#0b0b0b]" },
-  { nombre: "Colonia, Uruguay (días claros)", gradiente: "from-[#1a1a24] to-[#0b0b0b]" },
+  { nombre: "Puerto Madero", img: puertoMaderoImg },
+  { nombre: "Reserva Ecológica", img: reservaEcologicaImg },
+  { nombre: "Río de la Plata", img: rioDeLaPlataImg },
+  { nombre: "Skyline porteño", img: skylinePortenoImg },
+  { nombre: "Colonia, Uruguay (días claros)", img: coloniaUruguayImg },
 ];
 
 export default function VistasIconicas() {
@@ -68,12 +74,19 @@ export default function VistasIconicas() {
               ref={(el) => {
                 refs.current[i] = el;
               }}
-              className={`relative aspect-[16/10] w-full overflow-hidden rounded-xl border bg-gradient-to-br ${vista.gradiente} transition-colors duration-300 ${
+              className={`relative aspect-[16/10] w-full overflow-hidden rounded-xl border transition-colors duration-300 ${
                 active === i ? "border-comega-gold/40" : "border-comega-cream/10"
               }`}
             >
-              {/* PLACEHOLDER: reemplazar por foto real de la vista "{vista.nombre}" desde el edificio */}
-              <p className="absolute bottom-4 left-4 font-heading text-sm text-comega-cream/70 md:hidden">
+              <Image
+                src={vista.img}
+                alt={`Vista de ${vista.nombre} desde el edificio COMEGA`}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 60vw, 100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-comega-black/70 via-comega-black/10 to-transparent" />
+              <p className="absolute bottom-4 left-4 font-heading text-sm text-comega-cream/90 md:hidden">
                 {vista.nombre}
               </p>
             </div>

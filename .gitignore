@@ -43,3 +43,8 @@ next-env.d.ts
 # Screenshots de referencia sueltos en la raíz (no versionar).
 # Solo la raíz: los assets de public/ sí se versionan.
 /*.png
+
+# Fotos originales sin optimizar (638MB) — las versiones optimizadas que se
+# usan en la web viven en public/images/. Esta carpeta es solo material de
+# trabajo, no se versiona.
+/comega fotos/

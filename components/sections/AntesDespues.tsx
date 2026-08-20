@@ -1,8 +1,11 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedReveal from "@/components/ui/AnimatedReveal";
+import circa1934Img from "@/public/images/antes-despues/circa-1934.webp";
+import hoyImg from "@/public/images/antes-despues/hoy.webp";
 
 // react-compare-slider mide su contenedor en el cliente (ResizeObserver);
 // cargarlo sin SSR evita un mismatch de hydration inevitable con esa librería.
@@ -21,17 +24,29 @@ export default function AntesDespues() {
           <div className="mt-14 overflow-hidden rounded-xl border border-comega-gold/20">
             <ReactCompareSlider
               itemOne={
-                <div className="relative flex h-full w-full items-end bg-[linear-gradient(160deg,_#3a3226_0%,_#161310_70%)] sepia-[0.35] contrast-75">
-                  {/* PLACEHOLDER: reemplazar por foto histórica del edificio (Wikimedia Commons, citar fuente) */}
-                  <span className="p-4 font-heading text-xs uppercase tracking-widest text-comega-cream/70">
+                <div className="relative flex h-full w-full items-end">
+                  <Image
+                    src={circa1934Img}
+                    alt="Edificio COMEGA recién terminado, circa 1934"
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                  />
+                  <span className="relative z-10 bg-comega-black/50 p-4 font-heading text-xs uppercase tracking-widest text-comega-cream/90 backdrop-blur-sm">
                     Circa 1934
                   </span>
                 </div>
               }
               itemTwo={
-                <div className="relative flex h-full w-full items-end bg-[linear-gradient(160deg,_#2a2620_0%,_#0b0b0b_70%)]">
-                  {/* PLACEHOLDER: reemplazar por foto actual del edificio reciclado */}
-                  <span className="p-4 font-heading text-xs uppercase tracking-widest text-comega-cream/70">
+                <div className="relative flex h-full w-full items-end">
+                  <Image
+                    src={hoyImg}
+                    alt="Fachada actual del edificio COMEGA de noche"
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                  />
+                  <span className="relative z-10 bg-comega-black/50 p-4 font-heading text-xs uppercase tracking-widest text-comega-cream/90 backdrop-blur-sm">
                     Hoy
                   </span>
                 </div>

@@ -1,7 +1,13 @@
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedReveal from "@/components/ui/AnimatedReveal";
 import GoldDivider from "@/components/ui/GoldDivider";
 import Counter from "@/components/ui/Counter";
+// Import estático: next/image no antepone el basePath a un src string
+// (ver next.config.ts, images.unoptimized).
+import epocaImg from "@/public/images/historia/epoca-construccion.webp";
+import fachadaActualImg from "@/public/images/historia/fachada-actual.webp";
+import escaleraImg from "@/public/images/historia/escalera-caracol.webp";
 
 const stats = [
   { eyebrow: "Altura", value: 88, suffix: "m", label: "sobre Corrientes y Alem" },
@@ -50,9 +56,14 @@ export default function Historia() {
         </AnimatedReveal>
 
         <AnimatedReveal delay={0.15}>
-          {/* PLACEHOLDER: reemplazar por foto de época del edificio COMEGA */}
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-comega-bronze/25 bg-[linear-gradient(155deg,_#e6dfd0_0%,_#cdc3ad_60%)]">
-            <div className="absolute inset-4 border border-comega-bronze/20" />
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-comega-bronze/25">
+            <Image
+              src={epocaImg}
+              alt="Edificio COMEGA en construcción, circa 1933"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
           </div>
         </AnimatedReveal>
       </div>
@@ -61,8 +72,15 @@ export default function Historia() {
         <GoldDivider withMark />
         <AnimatedReveal delay={0.1}>
           <div className="mt-12 grid gap-4 lg:grid-cols-2">
-            {/* PLACEHOLDER: reemplazar por foto actual del edificio COMEGA */}
-            <div className="min-h-[22rem] rounded-3xl bg-[linear-gradient(155deg,_#ded6c4_0%,_#b9ad94_70%)] lg:min-h-[34rem]" />
+            <div className="relative min-h-[22rem] overflow-hidden rounded-3xl lg:min-h-[34rem]">
+              <Image
+                src={fachadaActualImg}
+                alt="Fachada actual del edificio COMEGA, esquina Corrientes y Alem"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {stats.map((stat) => (
@@ -85,8 +103,15 @@ export default function Historia() {
                 </div>
               ))}
 
-              {/* PLACEHOLDER: reemplazar por foto de detalle (hall, travertino, ascensores) */}
-              <div className="min-h-[14rem] rounded-3xl bg-[linear-gradient(155deg,_#cdc3ad_0%,_#8f8672_70%)]" />
+              <div className="relative min-h-[14rem] overflow-hidden rounded-3xl">
+                <Image
+                  src={escaleraImg}
+                  alt="Vista cenital de la escalera caracol art déco del edificio"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 640px) 25vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </AnimatedReveal>
