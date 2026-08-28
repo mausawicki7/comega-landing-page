@@ -6,22 +6,28 @@ import ArtDecoMotif from "@/components/ui/ArtDecoMotif";
 // Import estático: next/image no antepone el basePath a un src string,
 // pero sí resuelve correctamente la URL de una imagen importada.
 import heroImg from "@/public/images/hero/hero.jpeg";
+import patrimonioImg from "@/public/images/hero/pilares/patrimonio-vivo.webp";
+import oficinasImg from "@/public/images/hero/pilares/oficinas.webp";
+import vistasImg from "@/public/images/hero/pilares/vistas-irrepetibles.webp";
 
 const pilares = [
   {
     titulo: "Patrimonio vivo",
     texto:
       "Declarado patrimonio arquitectónico de la Ciudad, con una puesta en valor que respetó cada detalle original.",
+    imagen: patrimonioImg,
   },
   {
     titulo: "Oficinas de última generación",
     texto:
       "Servicios, conectividad y ascensores renovados dentro de una estructura de 1934 en hormigón y travertino.",
+    imagen: oficinasImg,
   },
   {
     titulo: "Vistas irrepetibles",
     texto:
       "Puerto Madero, la Reserva Ecológica y el Río de la Plata desde 88 metros sobre Corrientes y Alem.",
+    imagen: vistasImg,
   },
 ];
 
@@ -64,8 +70,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
           className="mt-6 max-w-xl font-body text-sm leading-relaxed text-comega-cream/70 md:text-base"
         >
-          Hormigón y travertino desde 1934. Hoy, sede de las marcas que hacen
-          la Buenos Aires de hoy.
+          Vanguardia en las alturas desde 1934. Elegancia e innovación en el
+          ícono racionalista que transformó y redefinió Buenos Aires.
         </motion.p>
       </div>
 
@@ -85,13 +91,13 @@ export default function Hero() {
         </motion.h2>
 
         <motion.a
-          href="#marcas"
+          href="#historia"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           className="group inline-flex shrink-0 items-center gap-4 self-start rounded-full bg-comega-cream py-1.5 pl-6 pr-1.5 font-heading text-sm font-semibold text-comega-black transition-colors hover:bg-white"
         >
-          Ver el edificio
+          Ver más
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-comega-gold text-comega-black transition-transform group-hover:translate-x-0.5">
             ↗
           </span>
@@ -106,10 +112,19 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 + 0.08 * i, ease: "easeOut" }}
-            className="rounded-2xl border border-white/10 bg-comega-black/55 p-7 backdrop-blur-md"
+            className="overflow-hidden rounded-2xl border border-white/10 bg-comega-black/55 backdrop-blur-md"
           >
-            <div className="h-9 w-9 rotate-45 border border-comega-gold/70" />
-            <div className="mt-8 border-t border-comega-cream/15 pt-6">
+            <div className="relative h-40 w-full">
+              <Image
+                src={pilar.imagen}
+                alt={pilar.titulo}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-comega-black/70 via-comega-black/10 to-transparent" />
+              <div className="absolute right-4 top-4 h-9 w-9 rotate-45 border border-comega-gold/70" />
+            </div>
+            <div className="border-t border-comega-cream/15 p-7">
               <h3 className="font-heading text-lg font-semibold tracking-tight text-comega-cream">
                 {pilar.titulo}
               </h3>
