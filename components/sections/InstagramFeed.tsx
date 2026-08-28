@@ -5,8 +5,11 @@ import post1 from "@/public/images/instagram/post-1.webp";
 import post2 from "@/public/images/instagram/post-2.webp";
 import post3 from "@/public/images/instagram/post-3.webp";
 import post4 from "@/public/images/instagram/post-4.webp";
+import post5 from "@/public/images/instagram/post-5.webp";
+import post6 from "@/public/images/instagram/post-6.webp";
+import post7 from "@/public/images/instagram/post-7.webp";
 
-const posts = [post1, post2, post3, post4];
+const posts = [post1, post2, post3, post4, post5, post6, post7];
 
 export default function InstagramFeed() {
   return (
