@@ -5,16 +5,14 @@ import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import puertoMaderoImg from "@/public/images/vistas/puerto-madero.webp";
 import reservaEcologicaImg from "@/public/images/vistas/reserva-ecologica.webp";
-import rioDeLaPlataImg from "@/public/images/vistas/rio-de-la-plata.webp";
 import skylinePortenoImg from "@/public/images/vistas/skyline-porteno.webp";
 import coloniaUruguayImg from "@/public/images/vistas/colonia-uruguay.webp";
 
 const vistas = [
   { nombre: "Puerto Madero", img: puertoMaderoImg },
   { nombre: "Reserva Ecológica", img: reservaEcologicaImg },
-  { nombre: "Río de la Plata", img: rioDeLaPlataImg },
   { nombre: "Skyline porteño", img: skylinePortenoImg },
-  { nombre: "Colonia, Uruguay (días claros)", img: coloniaUruguayImg },
+  { nombre: "Colonia, Uruguay", img: coloniaUruguayImg },
 ];
 
 export default function VistasIconicas() {
