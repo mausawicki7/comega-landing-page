@@ -6,33 +6,33 @@ const marcas = [
     nombre: "Trade SkyBar",
     logo: "TRADE\u2009SKYBAR",
     descripcion: "Terraza y bar en altura con vista a Puerto Madero.",
-    href: "#contacto",
+    href: "https://www.instagram.com/trade.skybar/",
   },
   {
     nombre: "Animal Studio",
     logo: "ANIMAL\u2009STUDIO",
     descripcion: "Estudio creativo en el corazón del edificio.",
-    href: "#contacto",
+    href: "https://www.instagram.com/ianimal.fit/",
   },
   {
     nombre: "Proteína",
     logo: "PROTEÍNA",
     descripcion: "Propuesta gastronómica saludable en planta baja.",
-    href: "#contacto",
+    href: "https://www.instagram.com/weareproteina/",
   },
   {
     nombre: "Office One",
     logo: "OFFICE\u2009ONE",
     descripcion:
       "Oficinas equipadas y listas para operar, con los servicios del edificio incluidos.",
-    href: "#contacto",
+    href: "https://www.officeone.com.ar/",
   },
   {
     nombre: "Alquiler de oficina o piso",
     logo: "COMEGA",
     descripcion:
       "Superficies disponibles para tu empresa, desde una oficina hasta una planta completa.",
-    href: "#contacto",
+    href: "https://www.officeone.com.ar/",
   },
 ];
 
@@ -97,6 +97,8 @@ export default function EncontraComega() {
             >
               <a
                 href={marca.href}
+                target={marca.href.startsWith("http") ? "_blank" : undefined}
+                rel={marca.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="group relative block h-full min-h-[19rem] md:min-h-[21rem]"
               >
                 <FondoConMuesca />

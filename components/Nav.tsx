@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import logoBlanco from "@/public/images/logo/comega-blanco.png";
 
 const links = [
   { href: "#historia", label: "Historia" },
@@ -15,11 +17,8 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-4 top-4 z-50 md:inset-x-8 md:top-6">
       <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-comega-gold/15 bg-comega-charcoal/70 px-5 py-3 backdrop-blur-md md:px-7">
-        <a
-          href="#"
-          className="font-heading text-lg font-semibold uppercase tracking-wide text-comega-cream"
-        >
-          Comega
+        <a href="#" className="block">
+          <Image src={logoBlanco} alt="Comega" className="h-5 w-auto md:h-6" priority />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

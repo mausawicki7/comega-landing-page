@@ -14,12 +14,13 @@ export default function InstagramFeed() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading number="06" eyebrow="Instagram" title="COMEGA en el feed" />
-          {/* PLACEHOLDER: confirmar handle real de Instagram */}
           <a
-            href="#"
+            href="https://www.instagram.com/edificiocomega/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-heading text-sm uppercase tracking-wide text-comega-gold underline underline-offset-4"
           >
-            Seguinos @comega.edificio
+            Seguinos @edificiocomega
           </a>
         </div>
 

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import edificioImg from "@/public/images/edificio/edificio-comega.png";
+import logoNegro from "@/public/images/logo/comega-negro.png";
 
 const columnaUno = [
   { label: "Historia", href: "#historia" },
@@ -13,12 +14,22 @@ const columnaUno = [
 
 // PLACEHOLDER: confirmar destinos reales de estos links
 const columnaDos = [
-  { label: "Alquiler de oficinas", href: "#marcas" },
-  { label: "Cómo llegar", href: "#ubicacion" },
+  { label: "Alquiler de oficinas", href: "https://www.officeone.com.ar/" },
+  {
+    label: "Cómo llegar",
+    href: "https://www.google.com/maps/search/?api=1&query=Edificio+Comega+Buenos+Aires",
+  },
 ];
 
-// PLACEHOLDER: confirmar handles y URLs reales
-const redes = ["Instagram", "LinkedIn", "Google Maps"];
+// PLACEHOLDER: confirmar URL real de Google Maps
+const redes = [
+  { label: "Instagram", href: "https://www.instagram.com/edificiocomega/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/edificio-comega-bsas" },
+  {
+    label: "Google Maps",
+    href: "https://www.google.com/maps/search/?api=1&query=Edificio+Comega+Buenos+Aires",
+  },
+];
 
 export default function Footer() {
   return (
@@ -88,9 +99,7 @@ export default function Footer() {
         <div className="mx-auto mt-24 max-w-6xl rounded-t-[2rem] bg-comega-cream px-7 py-12 md:rounded-t-[2.5rem] md:px-12 md:py-14">
           <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_1.4fr] md:gap-8">
             <div>
-              <p className="font-heading text-2xl font-semibold uppercase tracking-wide text-comega-black">
-                Comega
-              </p>
+              <Image src={logoNegro} alt="Comega" className="h-7 w-auto md:h-8" />
               <p className="mt-5 max-w-xs font-body text-sm leading-relaxed text-comega-black/55">
                 Patrimonio arquitectónico de Buenos Aires. En pie desde 1934,
                 sobre Av. Corrientes y Av. Leandro N. Alem.
@@ -111,25 +120,30 @@ export default function Footer() {
             </ul>
 
             <ul className="space-y-3">
-              {columnaDos.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="font-body text-sm text-comega-black/70 transition-colors hover:text-comega-black"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {columnaDos.map((link) => {
+                const isExternal = link.href.startsWith("http");
+                return (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      className="font-body text-sm text-comega-black/70 transition-colors hover:text-comega-black"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
 
             <div className="md:border-l md:border-comega-black/10 md:pl-8">
-              {/* PLACEHOLDER: datos de contacto reales */}
+              {/* PLACEHOLDER: confirmar email real de contacto */}
               <a
-                href="tel:+541100000000"
+                href="tel:+541140013100"
                 className="block w-fit border-b-2 border-comega-gold pb-1 font-heading text-xl font-semibold tracking-tight text-comega-black md:text-2xl"
               >
-                +54 11 0000-0000
+                +54 11 4001-3100
               </a>
               <a
                 href="mailto:info@comega.com.ar"
@@ -138,14 +152,22 @@ export default function Footer() {
                 info@comega.com.ar
               </a>
               <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 font-body text-xs text-comega-black/50">
-                {redes.map((red, i) => (
-                  <span key={red} className="flex items-center gap-3">
-                    {i > 0 && <span aria-hidden="true">·</span>}
-                    <a href="#" className="transition-colors hover:text-comega-black">
-                      {red}
-                    </a>
-                  </span>
-                ))}
+                {redes.map((red, i) => {
+                  const isExternal = red.href.startsWith("http");
+                  return (
+                    <span key={red.label} className="flex items-center gap-3">
+                      {i > 0 && <span aria-hidden="true">·</span>}
+                      <a
+                        href={red.href}
+                        target={isExternal ? "_blank" : undefined}
+                        rel={isExternal ? "noopener noreferrer" : undefined}
+                        className="transition-colors hover:text-comega-black"
+                      >
+                        {red.label}
+                      </a>
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </div>
