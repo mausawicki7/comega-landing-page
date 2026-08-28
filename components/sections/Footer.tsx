@@ -14,8 +14,6 @@ const columnaUno = [
 // PLACEHOLDER: confirmar destinos reales de estos links
 const columnaDos = [
   { label: "Alquiler de oficinas", href: "#marcas" },
-  { label: "Visitas guiadas", href: "#contacto" },
-  { label: "Prensa", href: "#contacto" },
   { label: "Cómo llegar", href: "#ubicacion" },
 ];
 

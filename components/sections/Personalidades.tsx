@@ -14,7 +14,7 @@ export default function Personalidades() {
   return (
     <section className="w-full bg-comega-black px-6 py-24 md:px-16 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading number="07" eyebrow="Personalidades que nos visitaron" title="Historias que pasaron por acá" />
+        <SectionHeading number="07" eyebrow="Personalidades que nos visitaron" title="El Comega también participó en:" />
       </div>
 
       <AnimatedReveal delay={0.1}>
