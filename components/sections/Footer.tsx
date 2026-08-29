@@ -17,17 +17,16 @@ const columnaDos = [
   { label: "Alquiler de oficinas", href: "https://www.officeone.com.ar/" },
   {
     label: "Cómo llegar",
-    href: "https://www.google.com/maps/search/?api=1&query=Edificio+Comega+Buenos+Aires",
+    href: "https://maps.app.goo.gl/vrLACgkXvZ8yZUu19",
   },
 ];
 
-// PLACEHOLDER: confirmar URL real de Google Maps
 const redes = [
   { label: "Instagram", href: "https://www.instagram.com/edificiocomega/" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/edificio-comega-bsas" },
   {
     label: "Google Maps",
-    href: "https://www.google.com/maps/search/?api=1&query=Edificio+Comega+Buenos+Aires",
+    href: "https://maps.app.goo.gl/vrLACgkXvZ8yZUu19",
   },
 ];
 

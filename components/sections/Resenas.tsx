@@ -24,7 +24,12 @@ export default function Resenas() {
             />
           </AnimatedReveal>
           <AnimatedReveal delay={0.1}>
-            <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur-md">
+            <a
+              href="https://maps.app.goo.gl/vrLACgkXvZ8yZUu19"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur-md transition-colors hover:border-comega-gold/40"
+            >
               <span className="font-heading text-3xl font-semibold text-comega-cream">
                 4.8
               </span>
@@ -34,7 +39,7 @@ export default function Resenas() {
                   120 reseñas en Google
                 </p>
               </div>
-            </div>
+            </a>
           </AnimatedReveal>
         </div>
 
