@@ -9,7 +9,7 @@ import peronImg from "@/public/images/personalidades/peron.webp";
 
 const personalidades = [
   {
-    nombre: "Messi en Trade",
+    nombre: "Messi en Trade Sky Bar",
     historia: "Una cena con Lionel Messi.",
     imagen: messiImg,
   },
@@ -39,23 +39,18 @@ export default function Personalidades() {
       </div>
 
       <AnimatedReveal delay={0.1}>
-        <div className="mx-auto mt-14 flex max-w-6xl snap-x snap-mandatory items-start gap-5 overflow-x-auto pb-4">
+        <div className="mx-auto mt-14 flex max-w-6xl snap-x snap-mandatory gap-5 overflow-x-auto pb-4">
           {personalidades.map((persona) => (
             <GlassCard
               key={persona.nombre}
               className="w-72 shrink-0 snap-start overflow-hidden md:w-80"
             >
-              <div
-                className="relative w-full bg-comega-charcoal"
-                style={{
-                  aspectRatio: `${persona.imagen.width} / ${persona.imagen.height}`,
-                }}
-              >
+              <div className="relative aspect-[4/5] w-full bg-comega-charcoal">
                 <Image
                   src={persona.imagen}
                   alt={persona.nombre}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(min-width: 768px) 320px, 288px"
                 />
               </div>

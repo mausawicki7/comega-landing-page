@@ -34,8 +34,26 @@ const pilares = [
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen w-full flex-col bg-comega-black">
-      {/* PLACEHOLDER: reemplazar por video full-bleed de presentación del edificio */}
-      <Image src={heroImg} alt="" fill priority className="object-cover" />
+      {/* Desktop: foto fija. Mobile: video de drone (más liviano, sin audio). */}
+      <Image
+        src={heroImg}
+        alt=""
+        fill
+        priority
+        className="hidden object-cover md:block"
+      />
+      <video
+        className="absolute inset-0 h-full w-full object-cover md:hidden"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster={heroImg.src}
+        // basePath fijo de GitHub Pages (ver next.config.ts): un <video> no
+        // pasa por el loader de next/image, así que hay que anteponerlo a mano.
+        src="/comega-landing-page/video/hero-mobile.mp4"
+      />
       <div className="absolute inset-0 bg-gradient-to-t from-comega-black via-comega-black/65 to-comega-black/30" />
 
       {/* Wrapper que recorta el motivo sin recortar las cards que sobresalen */}
