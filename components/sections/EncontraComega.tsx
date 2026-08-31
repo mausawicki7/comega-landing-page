@@ -99,7 +99,7 @@ export default function EncontraComega() {
                 href={marca.href}
                 target={marca.href.startsWith("http") ? "_blank" : undefined}
                 rel={marca.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group relative block h-full min-h-[19rem] md:min-h-[21rem]"
+                className="group relative block h-full min-h-[13rem] md:min-h-[21rem]"
               >
                 <FondoConMuesca />
 

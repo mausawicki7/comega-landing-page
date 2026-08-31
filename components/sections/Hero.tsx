@@ -122,8 +122,13 @@ export default function Hero() {
         </motion.a>
       </div>
 
-      {/* Las cards quedan 85% sobre la foto y 15% sobre la sección clara */}
-      <div className="relative z-20 mx-auto mt-16 grid w-full max-w-6xl translate-y-[20%] grid-cols-1 gap-5 px-6 md:mt-20 md:grid-cols-3 md:px-16">
+      {/* Las cards quedan 85% sobre la foto y 15% sobre la sección clara.
+          En mobile las 3 cards se apilan (grid-cols-1), así que el grid es
+          mucho más alto: trasladar todo el grid un 20% de SU altura total
+          (como en desktop) empuja la última card muy abajo y tapa el título
+          de Historia. Por eso en mobile se usa un offset fijo chico
+          (~20% de una sola card) en vez de un porcentaje del grid entero. */}
+      <div className="relative z-20 mx-auto mt-16 grid w-full max-w-6xl translate-y-16 grid-cols-1 gap-5 px-6 md:mt-20 md:translate-y-[20%] md:grid-cols-3 md:px-16">
         {pilares.map((pilar, i) => (
           <motion.article
             key={pilar.titulo}
