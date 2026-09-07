@@ -25,7 +25,7 @@ const marcas = [
     logo: "OFFICE\u2009ONE",
     descripcion:
       "Oficinas equipadas y listas para operar, con los servicios del edificio incluidos.",
-    href: "https://www.officeone.com.ar/",
+    href: "https://www.instagram.com/officeone_america/",
   },
   {
     nombre: "Alquiler de oficina o piso",

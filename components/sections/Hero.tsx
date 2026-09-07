@@ -7,7 +7,7 @@ import ArtDecoMotif from "@/components/ui/ArtDecoMotif";
 // pero sí resuelve correctamente la URL de una imagen importada.
 import heroImg from "@/public/images/hero/hero.jpeg";
 import patrimonioImg from "@/public/images/hero/pilares/patrimonio-vivo.webp";
-import oficinasImg from "@/public/images/hero/pilares/oficinas.webp";
+import oficinasImg from "@/public/images/hero/pilares/oficina-ultima-generacion.jpeg";
 import vistasImg from "@/public/images/hero/pilares/vistas-irrepetibles.webp";
 
 const pilares = [
@@ -117,7 +117,20 @@ export default function Hero() {
         >
           Ver más
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-comega-gold text-comega-black transition-transform group-hover:translate-x-0.5">
-            ↗
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
           </span>
         </motion.a>
       </div>

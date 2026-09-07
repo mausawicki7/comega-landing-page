@@ -12,7 +12,11 @@ const vistas = [
   { nombre: "Puerto Madero", img: puertoMaderoImg },
   { nombre: "Reserva Ecológica", img: reservaEcologicaImg },
   { nombre: "Skyline porteño", img: skylinePortenoImg },
-  { nombre: "Colonia, Uruguay", img: coloniaUruguayImg },
+  {
+    nombre: "Colonia, Uruguay",
+    img: coloniaUruguayImg,
+    nota: "En días claros, la vista permite ver Colonia, Uruguay.",
+  },
 ];
 
 export default function VistasIconicas() {
@@ -84,9 +88,16 @@ export default function VistasIconicas() {
                 sizes="(min-width: 768px) 60vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-comega-black/70 via-comega-black/10 to-transparent" />
-              <p className="absolute bottom-4 left-4 font-heading text-sm text-comega-cream/90 md:hidden">
-                {vista.nombre}
-              </p>
+              <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-1 md:bottom-5 md:left-5">
+                <p className="font-heading text-sm text-comega-cream/90 md:hidden">
+                  {vista.nombre}
+                </p>
+                {vista.nota && (
+                  <p className="max-w-md font-sans text-xs text-comega-cream/80 md:text-sm">
+                    {vista.nota}
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>
