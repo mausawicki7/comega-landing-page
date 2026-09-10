@@ -6,7 +6,7 @@ import Counter from "@/components/ui/Counter";
 // Import estático: next/image no antepone el basePath a un src string
 // (ver next.config.ts, images.unoptimized).
 import epocaImg from "@/public/images/historia/epoca-construccion.webp";
-import fachadaActualImg from "@/public/images/historia/fachada-actual.webp";
+import puertaGiratoriaImg from "@/public/images/historia/puerta-giratoria.jpg";
 import escaleraImg from "@/public/images/historia/escalera-caracol.webp";
 
 const stats = [
@@ -74,8 +74,8 @@ export default function Historia() {
           <div className="mt-12 grid gap-4 lg:grid-cols-2">
             <div className="relative min-h-[22rem] overflow-hidden rounded-3xl lg:min-h-[34rem]">
               <Image
-                src={fachadaActualImg}
-                alt="Fachada actual del edificio COMEGA, esquina Corrientes y Alem"
+                src={puertaGiratoriaImg}
+                alt="Puerta giratoria de bronce en el hall de entrada del edificio COMEGA"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"

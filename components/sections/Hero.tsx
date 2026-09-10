@@ -6,6 +6,7 @@ import ArtDecoMotif from "@/components/ui/ArtDecoMotif";
 // Import estático: next/image no antepone el basePath a un src string,
 // pero sí resuelve correctamente la URL de una imagen importada.
 import heroImg from "@/public/images/hero/hero.jpeg";
+import heroDesktopImg from "@/public/images/hero/hero-desktop.jpg";
 import patrimonioImg from "@/public/images/hero/pilares/patrimonio-vivo.webp";
 import oficinasImg from "@/public/images/hero/pilares/oficina-ultima-generacion.jpeg";
 import vistasImg from "@/public/images/hero/pilares/vistas-irrepetibles.webp";
@@ -36,7 +37,7 @@ export default function Hero() {
     <section className="relative flex min-h-screen w-full flex-col bg-comega-black">
       {/* Desktop: foto fija. Mobile: video de drone (más liviano, sin audio). */}
       <Image
-        src={heroImg}
+        src={heroDesktopImg}
         alt=""
         fill
         priority

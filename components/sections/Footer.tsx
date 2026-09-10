@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import edificioImg from "@/public/images/edificio/edificio-comega.png";
+import puertaGiratoriaImg from "@/public/images/historia/puerta-giratoria.jpg";
 import logoNegro from "@/public/images/logo/comega-negro.png";
+import siluetaImg from "@/public/images/edificio/edificio-comega-silueta.png";
 
 const columnaUno = [
   { label: "Historia", href: "#historia" },
@@ -33,14 +34,16 @@ const redes = [
 export default function Footer() {
   return (
     <footer id="contacto" className="relative w-full overflow-hidden bg-comega-black">
-      {/* Silueta del edificio emergiendo por detrás de la tarjeta */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center">
+      {/* Foto del hall de entrada de fondo, detrás del CTA y la tarjeta */}
+      <div className="pointer-events-none absolute inset-0">
         <Image
-          src={edificioImg}
+          src={puertaGiratoriaImg}
           alt=""
-          className="h-auto w-[36rem] max-w-none opacity-70 md:w-[52rem]"
+          fill
+          className="object-cover opacity-70"
+          sizes="100vw"
         />
-        {/* Fade a negro para fundir la silueta con el fondo */}
+        {/* Fade a negro para fundir la foto con el fondo */}
         <div className="absolute inset-0 bg-gradient-to-t from-comega-black via-comega-black/40 to-comega-black" />
       </div>
 
@@ -95,48 +98,61 @@ export default function Footer() {
         </div>
 
         {/* Tarjeta clara con el footer propiamente dicho */}
-        <div className="mx-auto mt-24 max-w-6xl rounded-t-[2rem] bg-comega-cream px-7 py-12 md:rounded-t-[2.5rem] md:px-12 md:py-14">
-          <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_1.4fr] md:gap-8">
-            <div>
+        <div className="mx-auto mt-24 max-w-6xl rounded-t-[2rem] bg-comega-cream px-7 pt-12 pb-12 md:rounded-t-[2.5rem] md:px-12 md:pt-14 md:pb-14">
+          {/* Links a la izquierda, silueta del edificio al centro apoyada sobre
+              la línea inferior, contacto a la derecha (ref: footer example.png) */}
+          <div className="grid gap-10 md:grid-cols-[1fr_auto_1fr] md:gap-12">
+            <div className="md:pb-12">
               <Image src={logoNegro} alt="Comega" className="h-7 w-auto md:h-8" />
               <p className="mt-5 max-w-xs font-body text-sm leading-relaxed text-comega-black/55">
                 Patrimonio arquitectónico de Buenos Aires. En pie desde 1934,
                 sobre Av. Corrientes y Av. Leandro N. Alem.
               </p>
+
+              <div className="mt-10 grid grid-cols-2 gap-6">
+                <ul className="space-y-3">
+                  {columnaUno.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="font-body text-sm text-comega-black/70 transition-colors hover:text-comega-black"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+
+                <ul className="space-y-3">
+                  {columnaDos.map((link) => {
+                    const isExternal = link.href.startsWith("http");
+                    return (
+                      <li key={link.label}>
+                        <a
+                          href={link.href}
+                          target={isExternal ? "_blank" : undefined}
+                          rel={isExternal ? "noopener noreferrer" : undefined}
+                          className="font-body text-sm text-comega-black/70 transition-colors hover:text-comega-black"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
 
-            <ul className="space-y-3 md:border-l md:border-comega-black/10 md:pl-8">
-              {columnaUno.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="font-body text-sm text-comega-black/70 transition-colors hover:text-comega-black"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="order-last flex items-end justify-center md:order-none">
+              <Image
+                src={siluetaImg}
+                alt="Ilustración del Edificio COMEGA"
+                className="h-64 w-auto md:h-[26rem] lg:h-[30rem]"
+                sizes="(min-width: 1024px) 180px, 160px"
+              />
+            </div>
 
-            <ul className="space-y-3">
-              {columnaDos.map((link) => {
-                const isExternal = link.href.startsWith("http");
-                return (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      target={isExternal ? "_blank" : undefined}
-                      rel={isExternal ? "noopener noreferrer" : undefined}
-                      className="font-body text-sm text-comega-black/70 transition-colors hover:text-comega-black"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-
-            <div className="md:border-l md:border-comega-black/10 md:pl-8">
+            <div className="md:pb-12 md:justify-self-end">
               {/* PLACEHOLDER: confirmar email real de contacto */}
               <a
                 href="tel:+541140013100"
@@ -171,7 +187,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-comega-black/10 pt-6 font-body text-xs text-comega-black/45 md:flex-row md:items-center">
+          <div className="flex flex-col items-start justify-between gap-3 border-t border-comega-black/10 pt-6 font-body text-xs text-comega-black/45 md:flex-row md:items-center">
             <p>
               © {new Date().getFullYear()} Edificio COMEGA. Todos los derechos
               reservados.
