@@ -108,32 +108,6 @@ export default function Hero() {
           Casi un siglo de historia porteña, y las marcas que escriben la
           próxima.
         </motion.h2>
-
-        <motion.a
-          href="#historia"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          className="group inline-flex shrink-0 items-center gap-4 self-start rounded-full bg-comega-cream py-1.5 pl-6 pr-1.5 font-heading text-sm font-semibold text-comega-black transition-colors hover:bg-white"
-        >
-          Ver más
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-comega-gold text-comega-black transition-transform group-hover:translate-x-0.5">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-          </span>
-        </motion.a>
       </div>
 
       {/* Las cards quedan 85% sobre la foto y 15% sobre la sección clara.
