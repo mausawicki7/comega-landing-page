@@ -34,7 +34,9 @@ export default function Nav() {
         </div>
 
         <a
-          href="#contacto"
+          href="https://www.officeone.com.ar/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden rounded-full bg-comega-gold px-5 py-2 font-heading text-sm font-semibold text-comega-black transition-colors hover:bg-comega-bronze md:inline-block"
         >
           Alquilar oficina
@@ -65,7 +67,9 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="https://www.officeone.com.ar/"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-1 rounded-lg bg-comega-gold px-3 py-2 text-center font-heading text-sm font-semibold text-comega-black"
           >
