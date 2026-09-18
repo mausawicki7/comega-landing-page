@@ -23,7 +23,7 @@ const columnaDos = [
 ];
 
 const InstagramIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <rect x="3" y="3" width="18" height="18" rx="5" />
     <circle cx="12" cy="12" r="4" />
     <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
@@ -31,13 +31,13 @@ const InstagramIcon = () => (
 );
 
 const LinkedInIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
     <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
   </svg>
 );
 
 const MapsIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z" />
     <circle cx="12" cy="10" r="2.5" />
   </svg>
@@ -127,8 +127,8 @@ export default function Footer() {
               la línea inferior, contacto a la derecha (ref: footer example.png) */}
           <div className="grid gap-10 md:grid-cols-[1fr_auto_1fr] md:gap-12">
             <div className="md:pb-12">
-              <Image src={logoNegro} alt="Comega" className="h-7 w-auto md:h-8" />
-              <p className="mt-5 max-w-xs font-body text-sm leading-relaxed text-comega-black/55">
+              <Image src={logoNegro} alt="Comega" className="h-8 w-auto md:h-9" />
+              <p className="mt-5 max-w-sm font-body text-base leading-relaxed text-comega-black/55">
                 Patrimonio arquitectónico de Buenos Aires. En pie desde 1934,
                 sobre Av. Corrientes y Av. Leandro N. Alem.
               </p>
@@ -139,7 +139,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="font-body text-sm text-comega-black/70 transition-colors hover:text-comega-black"
+                        className="font-body text-base text-comega-black/70 transition-colors hover:text-comega-black"
                       >
                         {link.label}
                       </a>
@@ -156,7 +156,7 @@ export default function Footer() {
                           href={link.href}
                           target={isExternal ? "_blank" : undefined}
                           rel={isExternal ? "noopener noreferrer" : undefined}
-                          className="font-body text-sm text-comega-black/70 transition-colors hover:text-comega-black"
+                          className="font-body text-base text-comega-black/70 transition-colors hover:text-comega-black"
                         >
                           {link.label}
                         </a>
@@ -171,8 +171,8 @@ export default function Footer() {
               <Image
                 src={siluetaImg}
                 alt="Ilustración del Edificio COMEGA"
-                className="h-64 w-auto md:h-[26rem] lg:h-[30rem]"
-                sizes="(min-width: 1024px) 180px, 160px"
+                className="h-52 w-auto md:h-[20rem] lg:h-[23rem]"
+                sizes="(min-width: 1024px) 140px, 130px"
               />
             </div>
 
@@ -180,17 +180,17 @@ export default function Footer() {
               {/* PLACEHOLDER: confirmar email real de contacto */}
               <a
                 href="tel:+541140013100"
-                className="block w-fit border-b-2 border-comega-gold pb-1 font-heading text-xl font-semibold tracking-tight text-comega-black md:text-2xl"
+                className="block w-fit border-b-2 border-comega-gold pb-1 font-heading text-2xl font-semibold tracking-tight text-comega-black md:text-3xl"
               >
                 +54 11 4001-3100
               </a>
               <a
                 href="mailto:info@comega.com.ar"
-                className="mt-5 block w-fit border-b-2 border-comega-gold pb-1 font-heading text-xl font-semibold tracking-tight text-comega-black md:text-2xl"
+                className="mt-5 block w-fit border-b-2 border-comega-gold pb-1 font-heading text-2xl font-semibold tracking-tight text-comega-black md:text-3xl"
               >
                 info@comega.com.ar
               </a>
-              <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 font-body text-xs text-comega-black/50">
+              <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 font-body text-sm text-comega-black/55">
                 {redes.map((red, i) => {
                   const isExternal = red.href.startsWith("http");
                   const Icon = red.icon;
