@@ -29,10 +29,7 @@ export default function AntesDespues() {
                     src={circa1934Img}
                     alt="Edificio COMEGA recién terminado, circa 1934"
                     fill
-                    // Zoom para igualar el encuadre de la foto actual: el cartel
-                    // "COMEGA" y la esquina del edificio caen en el mismo lugar
-                    // en ambas fotos, así el deslizador no "salta" de distancia.
-                    className="origin-[11.2%_62.5%] scale-[1.7] object-cover"
+                    className="object-cover"
                     sizes="100vw"
                   />
                   <span className="relative z-10 bg-comega-black/50 p-4 font-heading text-xs uppercase tracking-widest text-comega-cream/90 backdrop-blur-sm">
