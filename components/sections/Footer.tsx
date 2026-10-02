@@ -55,7 +55,7 @@ const redes = [
 
 export default function Footer() {
   return (
-    <footer id="contacto" className="relative w-full overflow-hidden bg-comega-black">
+    <footer className="relative w-full overflow-hidden bg-comega-black">
       {/* Foto del hall de entrada de fondo, detrás del CTA y la tarjeta */}
       <div className="pointer-events-none absolute inset-0">
         <Image
@@ -106,9 +106,7 @@ export default function Footer() {
           </motion.p>
 
           <motion.a
-            href="https://www.officeone.com.ar/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contacto"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-15%" }}
@@ -177,20 +175,7 @@ export default function Footer() {
             </div>
 
             <div className="md:pb-12 md:justify-self-end">
-              {/* PLACEHOLDER: confirmar email real de contacto */}
-              <a
-                href="tel:+541140013100"
-                className="block w-fit border-b-2 border-comega-gold pb-1 font-heading text-2xl font-semibold tracking-tight text-comega-black md:text-3xl"
-              >
-                +54 11 4001-3100
-              </a>
-              <a
-                href="mailto:info@comega.com.ar"
-                className="mt-5 block w-fit border-b-2 border-comega-gold pb-1 font-heading text-2xl font-semibold tracking-tight text-comega-black md:text-3xl"
-              >
-                info@comega.com.ar
-              </a>
-              <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 font-body text-sm text-comega-black/55">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-body text-sm text-comega-black/55">
                 {redes.map((red, i) => {
                   const isExternal = red.href.startsWith("http");
                   const Icon = red.icon;

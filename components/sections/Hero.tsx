@@ -69,7 +69,7 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="font-heading text-xs tracking-[0.35em] uppercase text-comega-gold md:text-sm"
         >
-          Corrientes &amp; Alem — Buenos Aires — 1934
+          Av. Corrientes 222 — Buenos Aires — 1934
         </motion.p>
 
         <motion.h1

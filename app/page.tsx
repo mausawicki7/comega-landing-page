@@ -7,6 +7,7 @@ import EncontraComega from "@/components/sections/EncontraComega";
 import InstagramFeed from "@/components/sections/InstagramFeed";
 import Personalidades from "@/components/sections/Personalidades";
 import MapaUbicacion from "@/components/sections/MapaUbicacion";
+import Contacto from "@/components/sections/Contacto";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <InstagramFeed />
       <Personalidades />
       <MapaUbicacion />
+      <Contacto />
       <Footer />
     </main>
   );
